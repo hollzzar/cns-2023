@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Avenir' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Avenir' rel='stylesheet'>
+
+
+
+<title>CNS_2023.knit</title>
+
+
+<script src="CNS_2023_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="CNS_2023_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<style>
+@page {
+size: 48in 36in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 30pt;
+width: 48in;
+height: 36in;
+padding: 0;
+text-align: justify;
+font-family: Avenir;
+}
+.poster_wrap {
+width: 48in;
+height: 36in;
+padding: 0cm;
+}
+.title_container {
+width: 48in;
+height: calc(36in * 0.15);
+overflow: hidden;
+background-color: #001E44;
+border: 0.5cm solid #016c5920;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #001E44;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #001E44;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Avenir;
+}
+/* unvisited link */
+a:link {
+color: #016c59;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #016c59;
+}
+
+/* mouse over link */
+a:hover {
+color: #016c59;
+}
+
+/* selected link */
+a:active {
+color: #016c59;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 2mm;
+-moz-column-rule-width: 2mm;
+column-rule-width: 2mm;
+-webkit-column-rule-style: solid;
+-moz-column-rule-style: solid;
+column-rule-style: solid;
+-webkit-column-rule-color: #d7d8db;
+-moz-column-rule-color: #d7d8db;
+column-rule-color: #d7d8db;
+column-gap: 0.5cm;
+padding-left: calc(0.5cm / 2);
+padding-right: calc(0.5cm / 2);
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: calc(48in + 0.5cm + 0.5cm);
+height: calc(36in * 0.83);
+padding-top: calc(36in * 0.005);
+padding-bottom: calc(36in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #FFFFFF;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 45pt;
+border: 1mm solid #001E44;
+background-color: #001E44;
+border-radius: 3mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+/* align-items: center; */
+margin: auto;
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+.caption {
+font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #016c592024;
+color: #001E44;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src= 'Logo_VTech_white.png' style="width: 80%">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title"><center>
+Tracking the time-course of cross-dialect comprehension with ERPs:
+</center>
+<center>
+Comparing Southern and Mainstream US-accented speech perception
+</center></h1>
+<h3 id="author">Holly A. Zaharchuk<sup>1</sup>, Abby Walker<sup>2</sup>, Janet G. van Hell<sup>1</sup></h3><br>
+<h5 id="affiliation"><sup>1</sup> Department of Psychology &amp; Center for Language Science, The Pennsylvania State University<br> <sup>2</sup> Department of English, Virginia Polytechnic Institute and State University</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+<img src=Logo_PSU_white.png style="width: 80%">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<!--     pandoc_args: [ -->
+<!--       "--lua-filter", "~/Mirror/format_files/multiple-bibliographies-new.lua", -->
+<!--       "--lua-filter", "/Library/Frameworks/R.framework/Versions/4.2/Resources/library/rmdfiltr/replace_ampersands.lua" -->
+<!--       ] -->
+<!-- bibliography: cs_project.bib -->
+<!-- nocite: "@*" -->
+<!-- link-citations: no -->
+<!-- csl: apa7_auth.csl -->
+<div id="key-terms" class="section level1">
+<h1>Key terms</h1>
+<ul>
+<li><strong>Southern US English</strong> (SUSE) is a regional variety with unique phonetic, lexical, and syntactic features</li>
+<li><strong>Mainstream US English</strong> (MUSE) is a supra-regional variety that is perceived as “standard” relative to other varieties</li>
+<li><strong>Southern listeners</strong> are bi-dialectal speakers of SUSE (D1) and MUSE (D2)</li>
+<li><strong>Mainstream listeners</strong> are mono-dialectal speakers of MUSE (D1)</li>
+</ul>
+</div>
+<div id="previously-observed-muse-advantage-in-behavior" class="section level1">
+<h1>Previously observed MUSE advantage in behavior</h1>
+<p><img src="d1-d2.png" width="100%"  /></p>
+</div>
+<div id="auditory-gono-go-task-with-eeg" class="section level1">
+<h1>Auditory go/no-go task with EEG</h1>
+<table class="table" style="font-size: 42px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="2">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+No-go
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Go
+</div>
+</th>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Talker
+</th>
+<th style="text-align:center;">
+Accent
+</th>
+<th style="text-align:center;">
+Real words
+</th>
+<th style="text-align:center;">
+Pseudowords
+</th>
+<th style="text-align:center;">
+Animal names
+</th>
+<th style="text-align:center;">
+Total words
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+1
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;font-weight: bold;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+Mainstream
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+120
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+120
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+30
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+270
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #1f78b4 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+4
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;font-weight: bold;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+Southern
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+120
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+120
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+30
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="3">
+270
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #33a02c !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #FFFFFF !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #FFFFFF !important;font-weight: bold;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #FFFFFF !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+240
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;color: #FFFFFF !important;background-color: #FFFFFF !important;font-weight: bold;min-width: 150px; border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+240
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+60
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;vertical-align:middle;font-style: italic;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;color: #000000 !important;">
+540
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="erp-predictions-and-current-observations" class="section level1">
+<h1>ERP predictions and current observations</h1>
+<table class="table" style="font-size: 36px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Time window
+</th>
+<th style="text-align:center;">
+Level of processing
+</th>
+<th style="text-align:center;">
+Predicted effect
+</th>
+<th style="text-align:center;">
+Prediction
+</th>
+<th style="text-align:center;">
+Observed effect
+</th>
+<th style="text-align:center;">
+Observation: Word type
+</th>
+<th style="text-align:center;">
+Observation: Accent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #a6cee3 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+150 - 300 ms
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #a6cee3 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Acoustic-phonetic
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #a6cee3 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Main effect of accent
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #a6cee3 !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Easier access for D1
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="2">
+Accent-word type interaction
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;vertical-align: middle !important;" rowspan="2">
+D1 benefit for real words
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;vertical-align:middle;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Lexicality effect for D1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #b2df8a !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+300 - 500 ms
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #b2df8a !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Lexico-semantic
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #b2df8a !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Accent-word type interaction
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;border-right:2.5px solid #d7d8db;;vertical-align:middle;background-color: #b2df8a !important;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+Stronger lexicality effect within D1
+</td>
+<td style="text-align:center;border-left:2.5px solid #d7d8db;;vertical-align:middle;border-bottom: 2.5px solid #d7d8db; border-top: 2.5px solid #d7d8db;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="muse-advantage-for-mainstream-listeners-in-online-measures-of-lexical-processing" class="section level1">
+<h1>MUSE advantage for Mainstream listeners<br/>in online measures of lexical processing</h1>
+<p><img src="erp_fig.png" width="100%"  /></p>
+</div>
+<div id="summary-of-findings-and-future-directions" class="section level1">
+<h1>Summary of findings and future directions</h1>
+<p><img src="d1-d2_processing.png" width="100%"  /></p>
+<div style="align: left; line-height: .3em">
+<p><span style="font-size: 22px"><b>References</b><br></span>
+<span style="font-size: 18px">
+Clopper, Tamati, and Pierrehumbert (2016)<br>
+Martin, Molnar, and Carreiras (2016)<br>
+Sumner, Kim, King, and McGowan (2014)<br>
+Walker (2018)<br>
+Zaharchuk, Shevlin, and Van Hell (2021)<br>
+</span></p>
+</div>
+</div>
+<div id="p200-analysis" class="section level1">
+<h1>P200 analysis</h1>
+<p><img src="CNS_2023_files/figure-html/p2_mean-1.png" width="97.5%"  /></p>
+</div>
+<div id="n400-analysis" class="section level1">
+<h1>N400 analysis</h1>
+<p><img src="CNS_2023_files/figure-html/n4_mean-1.png" width="97.5%"  /></p>
+<center>
+<img style="padding: 0px" src="NSF_plus_BILD.png" height = 200px>
+</center>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
