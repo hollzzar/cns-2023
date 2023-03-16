@@ -1,0 +1,141 @@
+---
+title: |
+  <center> Tracking the time-course of cross-dialect comprehension with ERPs: </center>
+  <center> Comparing Southern and Mainstream US-accented speech perception </center>
+poster_height: "36in"
+poster_width: "48in"
+font_family: Avenir
+titletext_fontfamily: Avenir
+primary_colour: "#001E44"
+secondary_colour: "#016c5920"
+accent_colour: "#d7d8db"
+author:
+  - name: Holly A. Zaharchuk
+    affil: 1
+  - name: Abby Walker
+    affil: 2
+  - name: Janet G. van Hell
+    affil: 1
+affiliation:
+  - num: 1
+    address: "Department of Psychology \\& Center for Language Science, The Pennsylvania State University"
+  - num: 2
+    address: "Department of English, Virginia Polytechnic Institute and State University"
+column_numbers: 3
+logoright_name: "Logo_PSU_white.png"
+logoleft_name: "Logo_VTech_white.png"
+titlebox_borderwidth: "0.5cm"
+sectitle_borderwidth: "1mm"
+titlebox_bordercol: "#001E44"
+author_textcol: "#FFFFFF"
+sectitle_textsize: "45pt"
+sectitle2_textsize: "40pt"
+body_textsize: "30pt"
+sectitle_boxshape: "3mm 0mm"
+link_col: "#016c59"
+columnline_style: solid
+columnline_col: "#d7d8db"
+columnline_width: "2mm"
+output: 
+  posterdown::posterdown_html:
+    self_contained: false
+---
+
+<!--     pandoc_args: [ -->
+<!--       "--lua-filter", "~/Mirror/format_files/multiple-bibliographies-new.lua", -->
+<!--       "--lua-filter", "/Library/Frameworks/R.framework/Versions/4.2/Resources/library/rmdfiltr/replace_ampersands.lua" -->
+<!--       ] -->
+<!-- bibliography: cs_project.bib -->
+<!-- nocite: "@*" -->
+<!-- link-citations: no -->
+<!-- csl: apa7_auth.csl -->
+
+```{r setup, include = FALSE, message = FALSE, warning = FALSE}
+## R setup ##
+
+# knitr settings
+# chooseCRANmirror(graphics = FALSE, ind = 1)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+# knitr::knit_hooks$set(document  =  function(x) {sub('\\usepackage[]{color}', '\\usepackage{xcolor}', x, fixed  =  TRUE)})
+```
+
+```{r load, echo = FALSE}
+source("/Users/hollyzaharchuk/Mirror/Project_VTech/exp1/analysis/5_visualize.R")
+```
+
+# Key terms
+
+- **Dialect** is a regional variety like **Southern United States English** (SUSE)
+- **Mainstream United States English** (MUSE) is perceived as "standard" by US English speakers relative to other varieties
+- **Mainstream listeners** are mono-dialectal speakers of MUSE (D1)
+- **Southern listeners** are bi-dialectal speakers of SUSE (D1) and MUSE (D2)
+
+# Previously observed MUSE advantage in behavior
+
+```{r info, out.width = "100%", out.extra = ""}
+knitr::include_graphics("d1-d2.png")
+```
+
+# Auditory go/no-go task with EEG
+
+```{r stims, out.width = "100%", out.extra = ""}
+stim_tab
+```
+
+# ERP predictions and current observations
+
+```{r sum, out.width = "100%", out.extra = ""}
+pred_tab
+```
+
+# Within-dialect advantage for Mainstream listeners during lexical processing
+
+```{r erp, out.width = "100%", out.extra = "", dpi = 300}
+knitr::include_graphics("erp_fig.png")
+```
+
+# Summary of findings and future directions
+
+```{r final, out.width = "100%", out.extra = ""}
+knitr::include_graphics("d1-d2_processing.png")
+```
+
+<div style="align: left; line-height: .3em">
+  <span style="font-size: 18px"><b>References</b><br></span>
+  <span style="font-size: 18px">
+    Clopper, Tamati, and Pierrehumbert (2016)<br>
+    Martin, Molnar, and Carreiras (2016)<br>
+    Sumner, Kim, King, and  McGowan (2014)<br>
+    Walker (2018)<br>
+    Zaharchuk, Shevlin, and Van Hell (2021)<br>
+  </span>
+</div>
+
+# P200 analysis
+
+```{r p2_mean, out.width = "97.5%", out.extra = "", dpi = 300}
+p2_fig
+```
+
+# N400 analysis
+
+```{r n4_mean, out.width = "97.5%", out.extra = "", dpi = 300}
+n4_fig
+```
+
+<!-- <div style="float: left; line-height: .5em; padding-top: 80px"> -->
+<!--   <span style="font-size: 24px"><b>References</b><br></span> -->
+<!--   <span style="font-size: 20px"> -->
+<!--     Clopper, Tamati, and Pierrehumbert (2016)<br> -->
+<!--     Martin, Molnar, and Carreiras (2016)<br> -->
+<!--     Sumner, Kim, King, and  McGowan (2014)<br> -->
+<!--     Walker (2018)<br> -->
+<!--     Zaharchuk, Shevlin, and Van Hell (2021)<br> -->
+<!--   </span> -->
+<!-- </div> -->
+
+<center><img style="padding: 0px" src="NSF_plus_BILD.png" width = 35% height = 35%></center>
+
+<!-- <div style="clear: both;"></div> -->
+
+
